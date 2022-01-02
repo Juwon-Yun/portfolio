@@ -6,6 +6,7 @@ export const store = createStore({
             menu : [
                 'Home', 'About', 'Project','Contact'
             ],
+            menuToggle : false,
         }
     },
     mutations : {
@@ -25,6 +26,9 @@ export const store = createStore({
                 window.scrollTo(0, 2860, {behavior:'smooth'})
                 break;
             }
+          },
+          toggleMenuIcon(state){
+            state.menuToggle = !state.menuToggle
           },
     },
     actions : {
