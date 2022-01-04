@@ -7,6 +7,8 @@ export const store = createStore({
                 'Home', 'About', 'Project','Contact'
             ],
             menuToggle : false,
+            inContact : true,
+            outContact : false,
         }
     },
     mutations : {
@@ -29,6 +31,8 @@ export const store = createStore({
           },
           toggleMenuIcon(state){
             state.menuToggle = !state.menuToggle
+            state.inContact = !state.inContact
+            state.outContact = !state.outContact
           },
     },
     actions : {
