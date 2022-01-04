@@ -1,7 +1,7 @@
 <template>
     <div class="menu-wrap">
       <div class="box1">
-            <div v-if="!this.$store.state.menuToggle">
+            <div v-if="menuToggle">
               <i class="fas fa-bars" @click="toggleMenuIcon"></i>
             </div>
             <div v-else>
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import { mapMutations } from 'vuex'
+import { mapMutations, mapState } from 'vuex'
 export default {
   data() {
     return {
@@ -31,6 +31,11 @@ export default {
     ...mapMutations({
       toggleMenuIcon : 'toggleMenuIcon'
     })
+  },
+  computed : {
+      ...mapState({
+        menuToggle  : state => state.menuToggle,
+      }),
   },
 }
 </script>

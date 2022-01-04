@@ -5,8 +5,8 @@
               <div class="profile-Img"></div>
           </div>
           <div class="menu-wrap">
-            <ul>
-                <li v-for="a in this.$store.state.menu" :key="a" @click="sendEle">
+            <ul >
+                <li v-for="a in this.$store.state.menu" :key="a"  :class="[{'li-out' : this.$store.state.transFlag}, {'li-in' : this.$store.state.displayFlag}]" >
                     <button v-scroll-to="`#${a}`">{{a}}</button> 
                 </li>
             </ul>
@@ -14,15 +14,19 @@
 
       </div>
       <div class="view">
-          
+        <Sheep/>
       </div>
   </div>
 </template>
 
 <script scoped>
 import {mapMutations} from 'vuex'
+import Sheep from './Sheep.vue'
 
 export default {
+    components : {
+      Sheep,
+    },
     data() {
         return {
             
@@ -32,6 +36,12 @@ export default {
     ...mapMutations({
       changeView : 'changeView'
     }),
+    // computed:{
+    //     ...mapState({
+    //         displayFlag : state => state.displayFlag,
+    //         transFlag : state => state.transFlag
+    //     })
+    // },
     sendEle(e){
       this.changeView(e)
     },
@@ -44,10 +54,11 @@ export default {
     width: 100%;
     height: 100vh;
     display: flex;
+    animation: fade 3s;
 }
 .side-bar{
     width: 20%;
-    background-color: #232426;
+    background-color: #525457;
     display: flex;
     flex-direction: column;
     color: #eee;
@@ -88,5 +99,29 @@ button {
   border: none;
   background: none;
   color: #eee;
+}
+.li-in{
+    visibility: visible;
+    animation: fade 3s;
+}
+.li-out{
+    visibility: hidden;
+    animation: unFade 3s;
+}
+@keyframes fade {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+@keyframes unFade {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
 }
 </style>
