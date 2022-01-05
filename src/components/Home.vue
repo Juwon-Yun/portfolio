@@ -36,12 +36,6 @@ export default {
     ...mapMutations({
       changeView : 'changeView'
     }),
-    // computed:{
-    //     ...mapState({
-    //         displayFlag : state => state.displayFlag,
-    //         transFlag : state => state.transFlag
-    //     })
-    // },
     sendEle(e){
       this.changeView(e)
     },
@@ -62,10 +56,12 @@ export default {
     display: flex;
     flex-direction: column;
     color: #eee;
+    background: linear-gradient(145deg, #585a5d, #4a4c4e);
+    box-shadow:  5px 5px 6px #313234,
+                -5px -5px 6px #73767a;
 }
 .view{
     width: 100%;
-    border: 3px solid blue;
 }
 .profile-wrap{
     width: 100%;
@@ -89,16 +85,23 @@ export default {
     text-align: center;
 }
 .menu-wrap > ul > li {
-    margin: 5px auto;
-    font-size: 18px;
+    margin: 4% auto;
+    font-size: 50px;
 }
 button {
+  font-size: 30px;
+  font-family: 'Roboto', sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   background: none;
   color: #eee;
+}
+button:hover{
+  text-decoration: underline;
+  color: #f7e9cc;
+  cursor: pointer;
 }
 .li-in{
     visibility: visible;

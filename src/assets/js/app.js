@@ -14,32 +14,41 @@ class App{
     constructor(){
         this.canvas = document.createElement('canvas');
         this.ctx = this.canvas.getContext("2d");
-        document.body.appendChild(this.canvas);
+        this.canvas.style.width = '100%' 
+        this.canvas.style.height = '99%' 
+        
+        const sheepContainer = document.getElementById('sheep-container')
+        
+        sheepContainer.appendChild(this.canvas);
 
         this.sun = new Sun();
 
         this.hills = [
-            // new Hill('16진수색상', 언덕의 속도, 언덕의 경사)
-            new Hill('#ff6bea', 0.2, 12),
-            new Hill('#ff59c2', 0.5, 9),
-            new Hill('#ff4674', 1.0, 6)
+            // new Hill('해시코드', 언덕의 속도, 언덕의 경사)
+            new Hill('#ff6347', 1.5, 13),
+            new Hill('#ff59c2', 2.3, 10),
+            new Hill('#ff4674', 3.0, 7)
         ];
         
+        // this.SheepController = new SheepController();
         this.SheepController = new SheepController('juwon_sheep.png');
         // this.SheepController = new SheepController('sheep.png');
         // this.SheepController = [
         //     new SheepController('sheep.png'),
         //     new SheepController('juwon_sheep.png'),
         // ];
-        window.addEventListener('resize', this.resize.bind(this), false);
+        // window.addEventListener('resize', this.resize.bind(this), false);
+        sheepContainer.addEventListener('resize', this.resize.bind(this), false);
         this.resize();
 
         requestAnimationFrame(this.animate.bind(this));
     }
 
     resize(){
-        this.stageWidth = document.body.clientWidth;
-        this.stageHeight = document.body.clientHeight;
+        // this.stageWidth = document.body.clientWidth;
+        // this.stageHeight = document.body.clientHeight;
+        this.stageWidth = document.getElementById('sheep-container').clientWidth;
+        this.stageHeight = document.getElementById('sheep-container').clientHeight;
 
         this.canvas.width = this.stageWidth * 2;
         this.canvas.height = this.stageHeight * 2;

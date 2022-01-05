@@ -3,7 +3,7 @@ export class Sun{
         this.radius = 200;
 
         // 태양 지글지글 fps 설정
-        this.total = 60;
+        this.total = 30;
         this.gap = 1 / this.total;
         this.originPos = [];
         this.pos = [];
@@ -22,7 +22,7 @@ export class Sun{
         this.stageHeight = stageHeight;
 
         this.x = this.stageWidth - this.radius - 140;
-        this.y = this.radius + 100;
+        this.y = this.radius + 150;
     }
     draw(ctx, t){
         if(!this.time){

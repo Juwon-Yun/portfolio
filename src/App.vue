@@ -1,6 +1,6 @@
 <template>
   <div class="stickyMenu" :class="[{'MenuTrans-in' : this.$store.state.transFlag}
-  , {'MenuTrans-out' : this.$store.state.displayFlag}]">
+    , {'MenuTrans-out' : this.$store.state.displayFlag}]">
     <ul>
       <li v-for="a in this.$store.state.menu" :key="a">
        <button v-scroll-to="`#${a}`">{{a}}</button> 
@@ -60,17 +60,6 @@ export default {
       this.lastScrollPosition = window.pageYOffset
       window.addEventListener('scroll', this.onScroll)
     },
-    // onScroll () {
-    //   // console.log(window.pageYOffset)
-    //    if(window.pageYOffset > 630 ) {
-    //     this.displayFlag = false
-    //     this.TransFlag = true
-    //   }
-    //   if(window.pageYOffset < 530 ) {
-    //     this.displayFlag = true
-    //     this.TransFlag = false
-    //   }
-    // },
     sendEle(e){
       this.changeView(e)
     },
@@ -84,7 +73,6 @@ export default {
   -ms-overflow-style: none;
   scrollbar-width: none; 
   background-color: #eee;
-
 }
 .container::-webkit-scrollbar{
   display: none; 
@@ -94,28 +82,31 @@ export default {
   width: 8vw;
   height: calc(100vh - 60vh);
   position: fixed;
+  display: flex;
+  align-content: center;
+  justify-content: center;
   top: 30%;
   margin-left: 1em;
   box-shadow: 0 2px 15px rgb(112, 116, 124);
   color: #eee;
-  border-radius: 18px;
+  border-radius: 40px;
+  background: linear-gradient(145deg, #585a5d, #4a4c4e);
+  box-shadow:  5px 5px 10px #313234,
+              -5px -5px 10px #73767a;
 }
-/* .stickyMenu.stickyMenu--hidden {
-  box-shadow: none; transform: translate3d(0, -100%, 0);
-} */
-.stickyMenu.MenuTrans-out{
+.stickyMenu.MenuTrans-out,
+.stickyMenu.MenuTrans-out > ul > li{
   transition: 0.5s all;
   top: 20%;
   left: 12%;
   visibility: hidden;
   height: 0; 
   animation: unFade 3s;
-  
 }
-.stickyMenu.MenuTrans-in{
+.stickyMenu.MenuTrans-in,
+.stickyMenu.MenuTrans-in > ul > li{
   transition: 0.3s all ease-out;
   visibility: visible;
-  /* transform: translate(0.3s); */
   height: calc(100vh - 60vh);
   left: 0;
   animation: fade 3s;
@@ -128,15 +119,23 @@ export default {
 }
 .stickyMenu > ul > li{
   margin: 8px auto;
-  font-size: 24px;
+  display: flex;
+  animation: unFade 1s all;
 }
 button {
+  font-size: 28px;
+  font-family: 'Roboto', sans-serif;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
   background: none;
   color: #eee;
+}
+button:hover{
+  text-decoration: underline;
+  color: #f7e9cc;
+  cursor: pointer;
 }
 
 @keyframes fade {

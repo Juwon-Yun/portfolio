@@ -3,14 +3,15 @@ import{
 } from "./sheep.js";
 
 export class SheepController{
-    // constructor(){
-    constructor(img){
+    constructor(){
+    // constructor(img){
         this.img = new Image();
         this.img.onload = () =>{
             this.loaded();
         };
-        // this.img.src = 'juwon_sheep.png';
-        this.img.src = img;
+        this.img.src = 'juwon_sheep.png';
+        // this.img.src = img;
+
         this.items = [];
 
         this.cur = 0;
