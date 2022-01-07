@@ -7,7 +7,7 @@
           <div class="menu-wrap">
             <ul >
                 <li v-for="a in this.$store.state.menu" :key="a"  :class="[{'li-out' : this.$store.state.transFlag}, {'li-in' : this.$store.state.displayFlag}]" >
-                    <button v-scroll-to="`#${a}`">{{a}}</button> 
+                    <button :class="{'home-toggle-in' : a.flag}" v-scroll-to="`#${a.name}`">{{a.name}}</button> 
                 </li>
             </ul>
           </div>
@@ -26,11 +26,6 @@ import Sheep from './Sheep.vue'
 export default {
     components : {
       Sheep,
-    },
-    data() {
-        return {
-            
-        }
     },
     methods:{
     ...mapMutations({
@@ -104,12 +99,17 @@ button:hover{
   cursor: pointer;
 }
 .li-in{
-    visibility: visible;
+  visibility: visible;
     animation: fade 3s;
 }
 .li-out{
-    visibility: hidden;
+  visibility: hidden;
     animation: unFade 3s;
+}
+.home-toggle-in{
+  text-decoration: underline;
+  color: #f7e9cc;
+  cursor: pointer;
 }
 @keyframes fade {
   0%{

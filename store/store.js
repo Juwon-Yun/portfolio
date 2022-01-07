@@ -4,8 +4,44 @@ const store = createStore({
     state(){
         return{
             menu : [
-                'Home', 'About', 'Project','Contact'
+                { 
+                  name : 'Home',
+                  flag : true,
+                },
+                {
+                  name : 'About',
+                  flag : false,
+                },
+                {
+                  name : 'Projects',
+                  flag : false,
+                },
+                {
+                  name : 'Contact',
+                  flag : false,
+                }
             ],
+            skills : [
+              {
+                name : 'JavaScript (ES6+)',
+              },
+              {
+                name : 'Vue.Js',
+              },
+              {
+                name : 'JQuery',
+              },
+              {
+                name : 'Java',
+              },
+              {
+                name : 'JPA',
+              },
+              {
+                name : 'MyBatis',
+              },
+            ],
+            
             // v1
             displayFlag : true,
             transFlag : false,
@@ -32,6 +68,15 @@ const store = createStore({
               case 'Contact':
                 window.scrollTo(0, 2860, {behavior:'smooth'})
                 break;
+            }
+          },
+          toggleMenuFlag(state, idx){
+            for(let i = 0; i < state.menu.length; i++){
+              if(idx === i){
+                state.menu[idx].flag = true
+              }else{
+                state.menu[i].flag = false
+              }
             }
           },
           toggleMenuIcon(context){

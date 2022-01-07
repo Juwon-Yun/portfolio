@@ -40,11 +40,11 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-body{
+/* body{
 	-ms-overflow-style: none;
 	scrollbar-width: none;
 	overflow: scroll;
 }
 body::-webkit-scrollbar{
 	display: none;
-}
+} */

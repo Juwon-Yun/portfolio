@@ -1,9 +1,9 @@
 <template>
   <div class="stickyMenu" :class="[{'MenuTrans-in' : this.$store.state.transFlag}
     , {'MenuTrans-out' : this.$store.state.displayFlag}]">
-    <ul>
+    <ul class="fixed-menu-wrap">
       <li v-for="a in this.$store.state.menu" :key="a">
-       <button v-scroll-to="`#${a}`">{{a}}</button> 
+       <button :class="{'toggle-in' : a.flag}" v-scroll-to="`#${a.name}`">{{a.name}}</button> 
       </li>
     </ul>
   </div>
@@ -11,7 +11,7 @@
     <div>
       <Home id="Home"/>
       <About id="About"/>
-      <Project id="Project"/>
+      <Project id="Projects"/>
       <Footer id="Contact"/>
     </div>
 </div>
@@ -54,14 +54,27 @@ export default {
   methods : {
     ...mapMutations({
       changeView : 'changeView',
-      onScroll : 'onScroll'
+      onScroll : 'onScroll',
+      toggleMenuFlag : 'toggleMenuFlag',
     }),
     mountFunction(){
       this.lastScrollPosition = window.pageYOffset
       window.addEventListener('scroll', this.onScroll)
+      window.addEventListener('scroll', this.toogleBtn)
     },
-    sendEle(e){
-      this.changeView(e)
+    toogleBtn(){
+      let scrollTop = document.documentElement.scrollTop;
+      let per = Math.ceil( scrollTop / document.body.scrollHeight * 100 )
+      if(per >= 0 && per <= 25){
+        this.toggleMenuFlag(0)
+      }else if(per >= 26 && per <=50){
+        this.toggleMenuFlag(1)
+      }else if(per >= 51 && per <=74){
+        this.toggleMenuFlag(2)
+      }else if(per >= 75){
+        this.toggleMenuFlag(3)
+      }
+      // console.log(per)
     },
   },
 }
@@ -69,7 +82,8 @@ export default {
 
 <style scoped>
 .container{
-  padding: 0 10%;
+  padding-left : 10%;
+  padding-right : 10%;
   -ms-overflow-style: none;
   scrollbar-width: none; 
   background-color: #eee;
@@ -122,7 +136,7 @@ export default {
   display: flex;
   animation: unFade 1s all;
 }
-button {
+.fixed-menu-wrap > li > button {
   font-size: 28px;
   font-family: 'Roboto', sans-serif;
   -webkit-appearance: none;
@@ -132,12 +146,16 @@ button {
   background: none;
   color: #eee;
 }
-button:hover{
+.fixed-menu-wrap > li > button:hover{
   text-decoration: underline;
   color: #f7e9cc;
   cursor: pointer;
 }
-
+.toggle-in{
+  text-decoration: underline;
+  color: #f7e9cc;
+  cursor: pointer;
+} 
 @keyframes fade {
   0%{
     opacity: 0;

@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import '../assets/js/app.js'
+// import '../assets/js/app.js'
 
 
 export default {
