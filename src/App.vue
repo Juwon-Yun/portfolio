@@ -10,9 +10,9 @@
 <div class="container">
     <div>
       <Home id="Home"/>
-      <About id="About"/>
-      <Project id="Projects"/>
-      <Footer id="Contact"/>
+      <About />
+      <Project />
+      <!-- <Footer id="Contact"/> -->
     </div>
 </div>
 </template>
@@ -21,7 +21,7 @@
 import Home from './components/Home.vue'
 import About from './components/About.vue'
 import Project from './components/Project.vue'
-import Footer from './components/Footer.vue'
+// import Footer from './components/Footer.vue'
 import {mapMutations} from 'vuex'
 
 export default {
@@ -30,7 +30,7 @@ export default {
     Home,
     About,
     Project,
-    Footer,
+    // Footer,
   },
   data() {
     return {
@@ -92,7 +92,6 @@ export default {
   display: none; 
 }
 .stickyMenu{
-  background-color: #525457;
   width: 8vw;
   height: calc(100vh - 60vh);
   position: fixed;
@@ -102,11 +101,11 @@ export default {
   top: 30%;
   margin-left: 1em;
   box-shadow: 0 2px 15px rgb(112, 116, 124);
-  color: #eee;
-  border-radius: 40px;
-  background: linear-gradient(145deg, #585a5d, #4a4c4e);
-  box-shadow:  5px 5px 10px #313234,
-              -5px -5px 10px #73767a;
+  color: #000;
+  border-radius: 10px;
+  background: #E2E3E5;
+  box-shadow: inset 5px 5px 10px #b5b6b7,
+              inset -5px -5px 10px #ffffff;
 }
 .stickyMenu.MenuTrans-out,
 .stickyMenu.MenuTrans-out > ul > li{
@@ -115,7 +114,8 @@ export default {
   left: 12%;
   visibility: hidden;
   height: 0; 
-  animation: unFade 3s;
+  animation: unFade 1.5s;
+  text-decoration: none;
 }
 .stickyMenu.MenuTrans-in,
 .stickyMenu.MenuTrans-in > ul > li{
@@ -123,7 +123,7 @@ export default {
   visibility: visible;
   height: calc(100vh - 60vh);
   left: 0;
-  animation: fade 3s;
+  animation: fade 2s;
 }
 .stickyMenu > ul {
   display: flex;
@@ -144,16 +144,16 @@ export default {
   appearance: none;
   border: none;
   background: none;
-  color: #eee;
+  color: #000;
 }
 .fixed-menu-wrap > li > button:hover{
   text-decoration: underline;
-  color: #f7e9cc;
+  color: #000;
   cursor: pointer;
 }
 .toggle-in{
   text-decoration: underline;
-  color: #f7e9cc;
+  color: #000;
   cursor: pointer;
 } 
 @keyframes fade {

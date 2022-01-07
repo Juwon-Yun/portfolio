@@ -47,13 +47,14 @@ export default {
 }
 .side-bar{
     width: 20%;
-    background-color: #525457;
+    background-color: #E2E3E5;
     display: flex;
     flex-direction: column;
     color: #eee;
-    background: linear-gradient(145deg, #585a5d, #4a4c4e);
-    box-shadow:  5px 5px 6px #313234,
-                -5px -5px 6px #73767a;
+  border-radius: 2px;
+  background: linear-gradient(145deg, #f2f3f5, #cbccce);
+  box-shadow: inset 5px 5px 6px #b5b6b7,
+              inset -5px -5px 6px #ffffff;
 }
 .view{
     width: 100%;
@@ -68,7 +69,7 @@ export default {
 .profile-Img{
     width: 170px;
     height: 170px;
-    background-image: url('../../src/assets/juwon2.jpg');
+    background-image: url('../../src/assets/logo.png');
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
@@ -80,7 +81,7 @@ export default {
     text-align: center;
 }
 .menu-wrap > ul > li {
-    margin: 4% auto;
+    margin: 8% auto;
     font-size: 50px;
 }
 button {
@@ -91,11 +92,11 @@ button {
   appearance: none;
   border: none;
   background: none;
-  color: #eee;
+  color: #000;
 }
 button:hover{
   text-decoration: underline;
-  color: #f7e9cc;
+  color: #000;
   cursor: pointer;
 }
 .li-in{
@@ -108,7 +109,7 @@ button:hover{
 }
 .home-toggle-in{
   text-decoration: underline;
-  color: #f7e9cc;
+  color: #000;
   cursor: pointer;
 }
 @keyframes fade {

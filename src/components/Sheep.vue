@@ -19,8 +19,11 @@ export default {
 .sheep-container{
     width: 100%;
     height: 100%;
-    background-color: #F1ECE1;
     outline: 0;
+    background: #EFF1F0;
+    box-shadow: inset 10px 10px 20px #bfc1c0,
+                inset -10px -10px 20px #ffffff;
+
 }
 .sheep-container > span{
   position: absolute;

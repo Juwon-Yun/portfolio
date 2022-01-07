@@ -16,23 +16,13 @@ const store = createStore({
                   name : 'Projects',
                   flag : false,
                 },
-                {
-                  name : 'Contact',
-                  flag : false,
-                }
             ],
             skills : [
               {
-                name : 'JavaScript (ES6+)',
+                name : 'Java',
               },
               {
                 name : 'Vue.Js',
-              },
-              {
-                name : 'JQuery',
-              },
-              {
-                name : 'Java',
               },
               {
                 name : 'JPA',
@@ -40,16 +30,37 @@ const store = createStore({
               {
                 name : 'MyBatis',
               },
+              {
+                name : 'JQuery',
+              },
+              {
+                name : 'JavaScript (ES6+)',
+              },
             ],
-            
+            projects : [
+              {
+                name : 'kanboo',
+              },
+              {
+                name : 'lolApp',
+              },
+              {
+                name : 'GMP',
+              },
+              {
+                name : 'zoom',
+              },
+            ],
             // v1
             displayFlag : true,
             transFlag : false,
+            projectInFlag : false,
 
             // v2
             menuToggle : true,
             inContact : true,
             outContact : false,
+            
 
         }
     },
@@ -94,6 +105,16 @@ const store = createStore({
               state.transFlag = false
             }
           },
+          setClass(state, idx){
+            const wrap_li = document.querySelectorAll('.projects > ul > li');
+            wrap_li[idx].firstElementChild.removeAttribute('class','project-wrap')
+            wrap_li[idx].firstElementChild.setAttribute('class','project-wrap-in')
+          },
+          removeClass(state, idx){
+            const wrap_li = document.querySelectorAll('.projects > ul > li');
+            wrap_li[idx].firstElementChild.removeAttribute('class','project-wrap-in')
+            wrap_li[idx].firstElementChild.setAttribute('class','project-wrap')
+          }
     },
     actions : {
 

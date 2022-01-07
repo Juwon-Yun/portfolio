@@ -1,6 +1,6 @@
 <template>
   <div class="about-container">
-    <div class="about-me">
+    <div id="About" class="about-me">
       <div class="description">
         <span>About Me</span>
         <span>
@@ -40,7 +40,7 @@ export default {
     ...mapState({
       skills : state => state.skills
     })
-  }
+  },
 }
 </script>
 
@@ -51,12 +51,13 @@ export default {
   display: flex;
   justify-content: center;
   align-content: center;
-  padding: 10%;
+  background: #EFF1F0;
+  box-shadow: inset 5px 5px 10px #bfc1c0,
+              inset -5px -5px 10px #ffffff;
 }
 .about-me{
   width: 100%;
   height: 90%;
-  background-color:  aquamarine;
   display: flex;
   flex-direction: column;
   padding: 10%;
@@ -64,7 +65,6 @@ export default {
 .description{
   width: 100%;
   height: 100%;
-  background-color: blueviolet;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -79,7 +79,6 @@ export default {
 }
 .my-skills{
   width: 100%;
-  background-color: tomato;
 }
 .my-skills-ul{
   display: flex;
@@ -101,12 +100,11 @@ export default {
   appearance: none;
   border: none;
   background: none;
-  color: #eee;
+  color: black;
   cursor: pointer;
 }
 .my-skills-li > button:hover {
   text-decoration: underline;
-  
 }
 .fas.fa-greater-than{
   font-size: 14px;
