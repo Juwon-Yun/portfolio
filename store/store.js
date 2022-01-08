@@ -40,15 +40,40 @@ const store = createStore({
             projects : [
               {
                 name : 'kanboo',
+                category : 'PMS',
+                usedSkill : {
+                  front : 'Vue.Js',
+                  back : 'Spring Boot',
+                  JDBC : 'JPA',
+                  DB : 'MariaDB',
+                },
               },
               {
-                name : 'lolApp',
+                name : 'LoLApp',
+                category : 'Util',
+                usedSkill : {
+                  front : 'ThymeLeaf',
+                  back : 'Spring Boot',
+                  JDBC : 'MyBatis',
+                  DB : 'MariaDB',
+                },
               },
               {
                 name : 'GMP',
+                category : 'ERP',
+                usedSkill : {
+                  front : 'JSP',
+                  back : 'Spring',
+                  JDBC : 'MyBatis',
+                  DB : 'Oracle',
+                },
               },
               {
                 name : 'zoom',
+                usedSkill : {
+                  front : 'Pug',
+                  back : 'Node.Js',
+                },
               },
             ],
             // v1
