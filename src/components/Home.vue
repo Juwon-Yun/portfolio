@@ -11,7 +11,6 @@
                 </li>
             </ul>
           </div>
-
       </div>
       <div class="view">
         <Sheep/>
@@ -31,60 +30,60 @@ export default {
     ...mapMutations({
       changeView : 'changeView'
     }),
-    sendEle(e){
-      this.changeView(e)
-    },
+      sendEle(e){
+        this.changeView(e)
+      },
     },
 }
 </script>
 
 <style scoped>
 .topContainer{
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    animation: fade 3s;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  animation: fade 3s;
 }
 .side-bar{
-    width: 20%;
-    background-color: #E2E3E5;
-    display: flex;
-    flex-direction: column;
-    color: #eee;
+  width: 20%;
+  background-color: #E2E3E5;
+  display: flex;
+  flex-direction: column;
+  color: #eee;
   border-radius: 2px;
   background: linear-gradient(145deg, #f2f3f5, #cbccce);
   box-shadow: inset 5px 5px 6px #b5b6b7,
               inset -5px -5px 6px #ffffff;
 }
 .view{
-    width: 100%;
+  width: 100%;
 }
 .profile-wrap{
-    width: 100%;
-    height: 30%;
-    display: flex;
-    justify-items: center;
-    align-items: center;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-items: center;
+  align-items: center;
 }
 .profile-Img{
-    width: 170px;
-    height: 170px;
-    background-image: url('../../src/assets/logo.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 50%;
-    margin : 0 auto;
+  width: 170px;
+  height: 170px;
+  background-image: url('../../src/assets/logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
+  margin : 0 auto;
 }
 .menu-wrap > ul{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 }
 .menu-wrap > ul > li {
-    margin: 8% auto;
-    font-size: 50px;
+  margin: 8% auto;
+  font-size: 50px;
 }
-button {
+.menu-wrap > ul > li > button {
   font-size: 30px;
   font-family: 'Roboto', sans-serif;
   -webkit-appearance: none;
@@ -94,7 +93,7 @@ button {
   background: none;
   color: #000;
 }
-button:hover{
+.menu-wrap > ul > li > button:hover{
   text-decoration: underline;
   color: #000;
   cursor: pointer;

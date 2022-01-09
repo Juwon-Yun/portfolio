@@ -4,7 +4,10 @@
       <ul >
         <li v-for="a,idx in projects" :key="idx" @mouseover="setClass(idx)" @mouseout="removeClass(idx)">
             <div class="project-wrap">
-              <span class="project-title">{{a.name}}</span>
+              <div class="title-category-wrap">
+                <span class="project-title">{{a.name}}</span>
+                <span class="project-category">{{a.category}}</span>
+              </div>
               <div class="project-img"></div>
               <ul class="project-wrap-ul">
                 <li class="project-wrap-skill" v-for="b in a.usedSkill" :key="b">
@@ -74,26 +77,25 @@ export default {
 .project-wrap{
   cursor: pointer;
   width: 100%;
-  height: 100%;
   margin-top: 0%;
-  margin-right: 0%;
-  border: 2px solid sandybrown;
   transition: 0.5s ease;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 4px;
 }
-.project-wrap-in{
+.project-wrap-in{ 
   width: 100%;
-  /* height: 100%; */
-  /* border: 2px solid chartreuse; */
   cursor: pointer;
   transition: 0.5s ease;
   margin-top: -10%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+.title-category-wrap{
+  display: flex;
+  justify-content: space-between;
 }
 .project-title{
   height: 1fr;
@@ -105,10 +107,13 @@ export default {
 }
 .project-wrap-ul{
   display: grid;
+  /* grid-template: repeat(2, minmax(10, 2fr)); */
+  grid-template-columns: repeat(3, minmax(140px, 200px));
+  gap: 0px 10px;
+  text-align: center;
 }
 .project-wrap-skill{
   height: 100%;
-  border: 2px solid black;
   color: #000;
 }
 </style>

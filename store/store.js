@@ -22,19 +22,22 @@ const store = createStore({
                 name : 'Java',
               },
               {
-                name : 'Vue.Js',
-              },
-              {
                 name : 'JPA',
               },
               {
                 name : 'MyBatis',
               },
               {
+                name : 'Vue.Js',
+              },
+              {
                 name : 'JQuery',
               },
               {
                 name : 'JavaScript (ES6+)',
+              },
+              {
+                name : 'Spring Boot',
               },
             ],
             projects : [
@@ -49,16 +52,6 @@ const store = createStore({
                 },
               },
               {
-                name : 'LoLApp',
-                category : 'Util',
-                usedSkill : {
-                  front : 'ThymeLeaf',
-                  back : 'Spring Boot',
-                  JDBC : 'MyBatis',
-                  DB : 'MariaDB',
-                },
-              },
-              {
                 name : 'GMP',
                 category : 'ERP',
                 usedSkill : {
@@ -69,12 +62,24 @@ const store = createStore({
                 },
               },
               {
-                name : 'zoom',
+                name : 'LoLApp',
+                category : 'Util',
                 usedSkill : {
-                  front : 'Pug',
-                  back : 'Node.Js',
+                  front : 'ThymeLeaf',
+                  back : 'Spring Boot',
+                  JDBC : 'MyBatis',
+                  DB : 'MariaDB',
                 },
               },
+              // {
+              //   name : 'zoom',
+              //   category : 'Util',
+              //   usedSkill : {
+              //     front : 'Pug',
+              //     back : 'Node.Js',
+              //     etc : 'socket.io',
+              //   },
+              // },
             ],
             // v1
             displayFlag : true,
