@@ -2,13 +2,13 @@
   <div class="project-container">
     <div id="Projects" class="projects">
       <ul >
-        <li v-for="a,idx in projects" :key="idx" @mouseover="setClass(idx)" @mouseout="removeClass(idx)">
+        <li v-for="a,idx in projects" :key="idx" @click="moveToGithub(idx)" @mouseover="setClass(idx)" @mouseout="removeClass(idx)">
             <div class="project-wrap">
               <div class="title-category-wrap">
                 <span class="project-title">{{a.name}}</span>
                 <span class="project-category">{{a.category}}</span>
               </div>
-              <div class="project-img"></div>
+              <div class="project-img" :style="{backgroundImage : a.img}"></div>
               <ul class="project-wrap-ul">
                 <li class="project-wrap-skill" v-for="b in a.usedSkill" :key="b">
                   {{b}}
@@ -34,6 +34,7 @@ export default {
     ...mapMutations({
       setClass : 'setClass',
       removeClass : 'removeClass',
+      moveToGithub : 'moveToGithub',
     }),
   },
 }
@@ -99,11 +100,14 @@ export default {
 }
 .project-title{
   height: 1fr;
-  border: 2px solid tan;
+  /* border: 2px solid tan; */
 }
 .project-img{
   height: 100%;
-  border: 2px solid seagreen;
+  /* border: 2px solid seagreen; */
+  background-image: url('../../src/assets/GMP.png');
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .project-wrap-ul{
   display: grid;

@@ -68,7 +68,7 @@ export default {
 .profile-Img{
   width: 170px;
   height: 170px;
-  background-image: url('../../src/assets/logo.png');
+  background-image: url('../../src/assets/juwon3.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 50%;

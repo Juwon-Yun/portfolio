@@ -40,7 +40,7 @@ export default {
   },
   // computed:{
   //   ...mapState({
-  //     menu : state => state.menu,
+  //     menu : state => state.menu,str
   //     displayFlag : state => state.displayFlag,
   //     transFlag : state => state.transFlag
   //   })
